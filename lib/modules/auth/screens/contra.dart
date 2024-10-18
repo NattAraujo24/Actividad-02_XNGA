@@ -9,7 +9,8 @@ class Contra extends StatefulWidget {
 
 class _LoginState extends State<Contra> {
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
   bool _isObscurePassword = true;
   bool _isObscureConfirmPassword = true;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -74,7 +75,8 @@ class _LoginState extends State<Contra> {
                     suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
-                            _isObscureConfirmPassword = !_isObscureConfirmPassword;
+                            _isObscureConfirmPassword =
+                                !_isObscureConfirmPassword;
                           });
                         },
                         icon: Icon(_isObscureConfirmPassword
@@ -100,11 +102,11 @@ class _LoginState extends State<Contra> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, '/'); 
+                        Navigator.pushNamed(context, '/');
                       }
                     },
                     style: OutlinedButton.styleFrom(
-                        backgroundColor: Colors.amber,
+                        backgroundColor: Colors.blue,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),

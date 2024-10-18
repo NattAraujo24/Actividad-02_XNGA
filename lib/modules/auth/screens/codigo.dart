@@ -67,11 +67,11 @@ class _CodigoState extends State<Codigo> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, '/verificacion'); 
+                        Navigator.pushNamed(context, '/verificacion');
                       }
                     },
                     style: OutlinedButton.styleFrom(
-                        backgroundColor: Colors.amber,
+                        backgroundColor: Colors.blue,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "721321520489",
+    "project_id": "finanzas-2debb",
+    "storage_bucket": "finanzas-2debb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721321520489:android:c13e05a14be235a54be1f8",
+        "android_client_info": {
+          "package_name": "com.example.learning_b"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0RpVaADidxW_x87LxGKjW8ROZgz5EhH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

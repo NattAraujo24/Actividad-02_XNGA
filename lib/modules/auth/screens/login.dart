@@ -32,7 +32,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         title: const Text("Iniciar Sesión"),
         centerTitle: true,
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.blue,
         titleTextStyle: const TextStyle(fontSize: 20, color: Colors.white),
       ),
       body: Center(
@@ -52,14 +52,12 @@ class _LoginState extends State<Login> {
                   validator: validateEmail,
                   controller: _emailController,
                   decoration: const InputDecoration(
-                    hintText: "Correo electronico",
-                    label: Text('Correo electronico'),
+                    hintText: "Correo electrónico",
+                    label: Text('Correo electrónico'),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
-                const SizedBox(
-                  height: 16,
-                ),
+                const SizedBox(height: 16),
                 TextFormField(
                   controller: _passwordController,
                   obscureText: _isObscure,
@@ -67,38 +65,48 @@ class _LoginState extends State<Login> {
                     hintText: 'Contraseña',
                     label: const Text('Contraseña'),
                     suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            _isObscure = !_isObscure;
-                          });
-                        },
-                        icon: Icon(_isObscure
-                            ? Icons.visibility
-                            : Icons.visibility_off)),
+                      onPressed: () {
+                        setState(() {
+                          _isObscure = !_isObscure;
+                        });
+                      },
+                      icon: Icon(
+                          _isObscure ? Icons.visibility : Icons.visibility_off),
+                    ),
                   ),
                 ),
-                const SizedBox(
-                  height: 48,
-                ),
+                const SizedBox(height: 48),
                 SizedBox(
                   height: 48,
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, '/splash'); 
+                        Navigator.pushNamed(context, '/home');
                       }
                     },
                     style: OutlinedButton.styleFrom(
-                        backgroundColor: Colors.amber,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                        )),
-                    child: const Text("Iniciar Sesion"),
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    child: const Text("Iniciar Sesión"),
                   ),
                 ),
                 const SizedBox(height: 16),
+                // Botón para crear cuenta
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/crearcuenta');
+                  },
+                  child: const Text(
+                    "Crear Cuenta",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+                const SizedBox(height: 8),
                 TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/codigo');

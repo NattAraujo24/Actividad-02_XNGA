@@ -1,4 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:learning1/firebase_options.dart';
+import 'package:learning1/kernel/widgets/crear_cuenta.dart';
 import 'package:learning1/modules/auth/screens/codigo.dart';
 import 'package:learning1/modules/auth/screens/contra.dart';
 import 'package:learning1/modules/auth/screens/login.dart';
@@ -8,11 +11,15 @@ import 'package:learning1/navegation/navigation.dart';
 import 'package:learning1/navegation/profile.dart';
 import 'package:learning1/widgets/SplashScreen.dart';
 
-void main() {
+//flutter pub get
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MainApp());
 }
 
-//flutter pub get
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -21,15 +28,22 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.light,
+        ),
+      ),
       routes: {
-        '/':(context) => const Login(),
-        '/menu':(context) => const Navigation(),
-        '/home':(context) => const Home(),
-        '/profile':(context) => const Profile(),
-        '/codigo':(context) => const Codigo(),
-        '/verificacion':(context) => const Verificacion(),
-        '/contra':(context) => const Contra(),
-        '/splash':(context) => const SplashScreen(),
+        '/': (context) => const SplashScreen(),
+        '/login': (context) => const Login(),
+        '/menu': (context) => const Navigation(),
+        '/home': (context) => const Home(),
+        '/profile': (context) => const Profile(),
+        '/codigo': (context) => const Codigo(),
+        '/verificacion': (context) => const Verificacion(),
+        '/contra': (context) => const Contra(),
+        '/crearcuenta': (context) => const CrearCuenta()
       },
     );
   }

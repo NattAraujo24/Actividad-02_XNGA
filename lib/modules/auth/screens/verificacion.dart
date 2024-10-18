@@ -15,7 +15,8 @@ class _VerificacionState extends State<Verificacion> {
     // Asegúrate de definir aquí la longitud y el formato esperado para tu código de verificación
     if (value == null || value.isEmpty) {
       return 'Por favor, ingrese su código de verificación';
-    } else if (value.length != 6) { // Ejemplo: código de 6 dígitos
+    } else if (value.length != 6) {
+      // Ejemplo: código de 6 dígitos
       return 'El código debe tener 6 dígitos';
     }
     return null;
@@ -44,13 +45,15 @@ class _VerificacionState extends State<Verificacion> {
                   height: 200,
                 ),
                 TextFormField(
-                  validator: validateCodigo, // Usa el nuevo validador para el código
+                  validator:
+                      validateCodigo, // Usa el nuevo validador para el código
                   controller: _codigoController,
                   decoration: const InputDecoration(
                     hintText: "Código de verificación",
                     label: Text('Código de verificación'),
                   ),
-                  keyboardType: TextInputType.number, // Cambiado a number para ingresar solo números
+                  keyboardType: TextInputType
+                      .number, // Cambiado a number para ingresar solo números
                 ),
                 const SizedBox(
                   height: 16,
@@ -64,11 +67,11 @@ class _VerificacionState extends State<Verificacion> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, '/contra'); 
+                        Navigator.pushNamed(context, '/contra');
                       }
                     },
                     style: OutlinedButton.styleFrom(
-                        backgroundColor: Colors.amber,
+                        backgroundColor: Colors.blue,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
